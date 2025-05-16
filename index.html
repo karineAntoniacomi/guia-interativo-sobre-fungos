@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Digital Interativo de Fungos e Cogumelos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Guia Digital Interativo de Fungos e Cogumelos</h1>
+            <p>Explore a diversidade fascinante do reino Fungi</p>
+        </div>
+    </header>
+
+    <section class="filter-section">
+        <div class="container">
+            <h2>Filtrar Espécies</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="region-filter">Região</label>
+                    <select id="region-filter">
+                        <option value="todas">Todas as Regiões</option>
+                        <option value="norte">Norte</option>
+                        <option value="nordeste">Nordeste</option>
+                        <option value="centro-oeste">Centro-Oeste</option>
+                        <option value="sudeste">Sudeste</option>
+                        <option value="sul">Sul</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="color-filter">Cor</label>
+                    <select id="color-filter">
+                        <option value="todas">Todas as Cores</option>
+                        <option value="branco">Branco</option>
+                        <option value="marrom">Marrom</option>
+                        <option value="vermelho">Vermelho</option>
+                        <option value="amarelo">Amarelo</option>
+                        <option value="laranja">Laranja</option>
+                        <option value="preto">Preto</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="habitat-filter">Habitat</label>
+                    <select id="habitat-filter">
+                        <option value="todos">Todos os Habitats</option>
+                        <option value="floresta">Floresta</option>
+                        <option value="campo">Campo</option>
+                        <option value="montanha">Montanha</option>
+                        <option value="urbano">Urbano</option>
+                        <option value="madeira">Em madeira</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="btn">Limpar Filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Pesquisar fungos por nome">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <main class="catalog">
+        <div class="container">
+            <div id="fungi-grid" class="fungi-grid">
+                <!-- itens inseridos dinamicamente com JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <section class="info-modal" id="info-modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-content-container"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Guia Digital de Fungos e Cogumelos</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
