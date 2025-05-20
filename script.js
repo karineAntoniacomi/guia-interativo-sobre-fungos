@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Formato de prateleira ou orelha, superfície lisa, cor laranja-avermelhada brilhante, textura coriácea",
             country: "Brasil e outras regiões tropicais e subtropicais",
             images: [
-                "images/Pycnoporus_sanguineus.png"
+                "images/pycnoporus_sanguineus.png"
             ]
         },
         {
