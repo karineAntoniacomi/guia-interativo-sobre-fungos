@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum - Guia Interativo de Fungos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Fórum de Fungos</h1>
+            <p>Compartilhe suas descobertas e discuta com outros entusiastas</p>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="forum.html" class="nav-link active">Fórum</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="forum-section">
+            <div class="container">
+                <div class="forum-header">
+                    <h2>Publicações Recentes</h2>
+                    <p>Encontrou um fungo interessante? Compartilhe com a comunidade!</p>
+                    <button class="create-post-btn" onclick="openCreatePostModal()">
+                        <i class="fas fa-plus"></i> Nova Publicação
+                    </button>
+                </div>
+
+                <div class="forum-posts">
+                    <!-- Posts serão inseridos aqui dinamicamente via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para criar nova publicação -->
+        <div class="create-post-modal" id="createPostModal">
+            <div class="post-form">
+                <div class="close-button" onclick="closeCreatePostModal()">×</div>
+                <h2>Nova Publicação</h2>
+                <form id="newPostForm" onsubmit="handlePostSubmit(event)">
+                    <div class="form-group">
+                        <label for="postTitle">Título</label>
+                        <input type="text" id="postTitle" required placeholder="Digite um título para sua publicação">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postDescription">Descrição</label>
+                        <textarea id="postDescription" rows="4" required placeholder="Descreva o que você encontrou..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postLocation">Localização</label>
+                        <input type="text" id="postLocation" required placeholder="Onde você encontrou este fungo?">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fotos</label>
+                        <div class="image-upload" onclick="triggerImageUpload()">
+                            <i class="fas fa-camera"></i>
+                            <p>Clique para adicionar fotos</p>
+                            <input type="file" id="imageInput" multiple accept="image/*" style="display: none">
+                        </div>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+
+                    <button type="submit" class="btn">Publicar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Guia Interativo de Fungos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funções para manipulação do modal
+        function openCreatePostModal() {
+            document.getElementById('createPostModal').style.display = 'flex';
+        }
+
+        function closeCreatePostModal() {
+            document.getElementById('createPostModal').style.display = 'none';
+        }
+
+        // Função para upload de imagens
+        function triggerImageUpload() {
+            document.getElementById('imageInput').click();
+        }
+
+        // Preview de imagens
+        document.getElementById('imageInput').addEventListener('change', function(event) {
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = '';
+            
+            Array.from(event.target.files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'preview-image';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+        // Manipulação do formulário
+        function handlePostSubmit(event) {
+            event.preventDefault();
+            
+            // Aqui você implementará a lógica para enviar os dados para o backend
+            const formData = new FormData();
+            formData.append('title', document.getElementById('postTitle').value);
+            formData.append('description', document.getElementById('postDescription').value);
+            formData.append('location', document.getElementById('postLocation').value);
+            
+            const imageFiles = document.getElementById('imageInput').files;
+            Array.from(imageFiles).forEach(file => {
+                formData.append('images[]', file);
+            });
+
+            // Exemplo de como adicionar o post à lista (simulado)
+            addPostToFeed({
+                title: document.getElementById('postTitle').value,
+                description: document.getElementById('postDescription').value,
+                location: document.getElementById('postLocation').value,
+                author: 'Usuário Exemplo',
+                date: new Date().toLocaleDateString(),
+                images: Array.from(imageFiles).map(file => URL.createObjectURL(file))
+            });
+
+            // Limpar formulário e fechar modal
+            event.target.reset();
+            document.getElementById('imagePreview').innerHTML = '';
+            closeCreatePostModal();
+        }
+
+        // Função para adicionar post ao feed
+        function addPostToFeed(post) {
+            const postsContainer = document.querySelector('.forum-posts');
+            
+            const postElement = document.createElement('div');
+            postElement.className = 'forum-post';
+            
+            const imagesHtml = post.images.map(img => `
+                <img src="${img}" alt="Imagem do fungo" class="post-image">
+            `).join('');
+
+            postElement.innerHTML = `
+                <div class="post-header">
+                    <div class="post-author">
+                        <img src="https://via.placeholder.com/40" alt="Avatar" class="author-avatar">
+                        <div>
+                            <strong>${post.author}</strong>
+                            <div class="post-metadata">${post.date}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3>${post.title}</h3>
+                <div class="post-content">
+                    <p>${post.description}</p>
+                </div>
+                <div class="post-images">
+                    ${imagesHtml}
+                </div>
+                <div class="post-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    ${post.location}
+                </div>
+                <div class="post-actions">
+                    <button class="action-btn">
+                        <i class="fas fa-comment"></i>
+                        Comentar
+                    </button>
+                    <button class="action-btn">
+                        <i class="fas fa-share"></i>
+                        Compartilhar
+                    </button>
+                </div>
+            `;
+
+            postsContainer.insertBefore(postElement, postsContainer.firstChild);
+        }
+
+        // Carregar alguns posts de exemplo quando a página carregar
+        window.addEventListener('load', () => {
+            const examplePosts = [
+                {
+                    title: 'Cogumelo encontrado na Mata Atlântica',
+                    description: 'Encontrei este interessante espécime durante uma caminhada. Alguém pode ajudar a identificá-lo?',
+                    location: 'Parque Nacional da Tijuca, RJ',
+                    author: 'Maria Silva',
+                    date: '15/03/2024',
+                    images: ['https://via.placeholder.com/400x300']
+                },
+                {
+                    title: 'Fungo em tronco caído',
+                    description: 'Grupo de fungos crescendo em um tronco caído após as chuvas da semana passada.',
+                    location: 'Horto Florestal, SP',
+                    author: 'João Santos',
+                    date: '14/03/2024',
+                    images: ['https://via.placeholder.com/400x300']
+                }
+            ];
+
+            examplePosts.forEach(post => addPostToFeed(post));
+        });
+    </script>
+</body>
+</html> 

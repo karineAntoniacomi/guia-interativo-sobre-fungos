@@ -31,25 +31,52 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Forma de leque ou ostra, crescem em cachos, cor branca a cinza-azulada",
             country: "Amplamente distribuído, originário da Europa, Ásia e América do Norte",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/f/f6/Pleurotus_ostreatus_-_Oyster_mushroom_-_Austernpilz_-_01.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/6/60/Pleurotus_ostreatus_JPG7.jpg"
+                "images/Cogumelo-ostra-Pleurotus-ostreatus.png",
+                "images/cogu_ostra.png"
+            ],
+            recipes: [
+                {
+                    name: "Cogumelos Ostra Grelhados com Alho",
+                    ingredients: [
+                        "500g de cogumelos ostra",
+                        "4 dentes de alho picados",
+                        "2 colheres de sopa de azeite",
+                        "Sal e pimenta a gosto",
+                        "Salsinha picada"
+                    ],
+                    instructions: "1. Limpe os cogumelos e corte os maiores ao meio\n2. Aqueça o azeite em uma frigideira\n3. Adicione o alho e doure levemente\n4. Acrescente os cogumelos e grelhe por 5-7 minutos\n5. Tempere com sal e pimenta\n6. Finalize com salsinha"
+                },
+                {
+                    name: "Risoto de Cogumelos Ostra",
+                    ingredients: [
+                        "300g de cogumelos ostra",
+                        "1 xícara de arroz arbóreo",
+                        "1/2 cebola picada",
+                        "2 dentes de alho",
+                        "1/2 xícara de vinho branco",
+                        "4 xícaras de caldo de legumes",
+                        "Queijo parmesão ralado",
+                        "Manteiga",
+                        "Sal e pimenta"
+                    ],
+                    instructions: "1. Refogue a cebola e o alho na manteiga\n2. Adicione o arroz e doure\n3. Acrescente o vinho e deixe evaporar\n4. Adicione o caldo aos poucos, mexendo sempre\n5. Na metade do cozimento, adicione os cogumelos\n6. Finalize com parmesão e manteiga"
+                }
             ]
         },
         {
             id: 3,
-            name: "Macrolepiota procera",
-            commonName: "Cogumelo parasol",
-            region: ["sudeste", "sul"],
-            color: "marrom",
-            habitat: ["campo", "floresta"],
-            description: "Cogumelo alto e elegante, comestível e apreciado. Caracteriza-se pelo chapéu em forma de guarda-chuva.",
-            edible: true,
+            name: "Pycnoporus sanguineus",
+            commonName: "Orelha de pau",
+            region: ["norte", "nordeste", "centro-oeste", "sudeste", "sul"],
+            color: "laranja",
+            habitat: ["madeira", "floresta"],
+            description: "Fungo comum em troncos mortos, reconhecido por sua cor laranja-avermelhada vibrante. Possui propriedades medicinais e é utilizado na medicina tradicional.",
+            edible: false,
             poisonous: false,
-            characteristics: "Alto, com chapéu grande em forma de guarda-chuva, estipe longo com escamas marrons",
-            country: "Europa, especialmente países mediterrâneos",
+            characteristics: "Formato de prateleira ou orelha, superfície lisa, cor laranja-avermelhada brilhante, textura coriácea",
+            country: "Brasil e outras regiões tropicais e subtropicais",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/9/97/Macrolepiota_procera_2010_G1.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/0/01/Parasol_mushroom%2C_Macrolepiota_procera.jpg"
+                "images/Pycnoporus_sanguineus.png"
             ]
         },
         {
@@ -67,10 +94,53 @@ document.addEventListener('DOMContentLoaded', () => {
             images: [
                 "images/shiitake.png",
                 "images/shiitake2.png"
+            ],
+            recipes: [
+                {
+                    name: "Shiitake Salteado Oriental",
+                    ingredients: [
+                        "300g de shiitake fresco",
+                        "3 colheres de sopa de molho de soja",
+                        "2 dentes de alho picados",
+                        "1 pedaço de gengibre ralado",
+                        "2 colheres de sopa de óleo de gergelim",
+                        "Cebolinha para finalizar"
+                    ],
+                    instructions: "1. Limpe os shiitakes e corte em fatias\n2. Aqueça o óleo de gergelim em uma wok ou frigideira\n3. Adicione alho e gengibre, refogue até dourar\n4. Acrescente os shiitakes e refogue por 5 minutos\n5. Adicione o molho de soja e cozinhe por mais 2 minutos\n6. Finalize com cebolinha picada"
+                },
+                {
+                    name: "Caldo de Shiitake",
+                    ingredients: [
+                        "100g de shiitake seco",
+                        "2L de água",
+                        "1 cebola",
+                        "2 talos de salsão",
+                        "1 cenoura",
+                        "1 pedaço de alga kombu (opcional)",
+                        "Sal a gosto"
+                    ],
+                    instructions: "1. Hidrate os shiitakes em água morna por 30 minutos\n2. Corte os legumes grosseiramente\n3. Em uma panela, coloque todos os ingredientes\n4. Leve para ferver e reduza o fogo\n5. Cozinhe em fogo baixo por 1 hora\n6. Coe e use como base para sopas e molhos"
+                }
             ]
         },
         {
             id: 5,
+            name: "Macrolepiota procera",
+            commonName: "Cogumelo parasol",
+            region: ["sudeste", "sul"],
+            color: "marrom",
+            habitat: ["campo", "floresta"],
+            description: "Cogumelo alto e elegante, comestível e apreciado. Caracteriza-se pelo chapéu em forma de guarda-chuva.",
+            edible: true,
+            poisonous: false,
+            characteristics: "Alto, com chapéu grande em forma de guarda-chuva, estipe longo com escamas marrons",
+            country: "Europa, especialmente países mediterrâneos",
+            images: [
+                "images/Macrolepiota_procera.png"
+            ]
+        },
+        {
+            id: 6,
             name: "Agaricus bisporus",
             commonName: "Champignon",
             region: ["todas"],
@@ -84,10 +154,38 @@ document.addEventListener('DOMContentLoaded', () => {
             images: [
                 "https://upload.wikimedia.org/wikipedia/commons/0/01/ChampignonMushroom.jpg",
                 "https://upload.wikimedia.org/wikipedia/commons/c/c2/Agaricus_bisporus_-_crisp_for_Christmas.jpg"
+            ],
+            recipes: [
+                {
+                    name: "Champignon à la Crème",
+                    ingredients: [
+                        "500g de champignon fresco",
+                        "1 cebola picada",
+                        "2 dentes de alho",
+                        "200ml de creme de leite fresco",
+                        "Sal e pimenta-do-reino",
+                        "Salsinha picada",
+                        "2 colheres de sopa de manteiga"
+                    ],
+                    instructions: "1. Limpe os champignons e corte em fatias\n2. Refogue a cebola e o alho na manteiga\n3. Adicione os champignons e refogue até dourar\n4. Acrescente o creme de leite e deixe reduzir\n5. Tempere com sal e pimenta\n6. Finalize com salsinha"
+                },
+                {
+                    name: "Champignon Recheado",
+                    ingredients: [
+                        "20 champignons grandes",
+                        "200g de cream cheese",
+                        "100g de bacon picado",
+                        "1 cebola pequena picada",
+                        "2 dentes de alho",
+                        "Queijo parmesão ralado",
+                        "Salsinha"
+                    ],
+                    instructions: "1. Retire os talos dos champignons\n2. Frite o bacon até ficar crocante\n3. Na mesma gordura, refogue cebola e alho\n4. Misture com cream cheese e salsinha\n5. Recheie os champignons\n6. Polvilhe com parmesão\n7. Asse por 20 minutos a 180°C"
+                }
             ]
         },
         {
-            id: 6,
+            id: 7,
             name: "Cantharellus cibarius",
             commonName: "Cantarelo",
             region: ["sul"],
@@ -99,12 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Forma de funil, cor amarelo-alaranjada, pregas em vez de lamelas, aroma frutado",
             country: "Europa Central, Escandinávia e América do Norte",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/c/c4/Cantharellus_cibarius_01.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cantharellus_cibarius_%28Chanterelle%29.jpg"
+                "images/Chanterelle_Cantharellus_cibarius.png"
             ]
         },
         {
-            id: 7,
+            id: 8,
             name: "Boletus edulis",
             commonName: "Porcini",
             region: ["sul"],
@@ -121,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            id: 8,
+            id: 9,
             name: "Amanita phalloides",
             commonName: "Chapéu da morte",
             region: ["sudeste", "sul"],
@@ -138,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            id: 9,
+            id: 10,
             name: "Psilocybe cubensis",
             commonName: "Cogumelo mágico",
             region: ["norte", "nordeste", "centro-oeste"],
@@ -150,12 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Chapéu cônico que se torna plano, cor amarelo-acastanhada, escurece quando manipulado",
             country: "México, América Central e do Sul, e Sudeste Asiático",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/4/4a/Psilocybe_cubensis_dried.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/5/5c/Psilocybe_cubensis.jpg"
+                "images/Psilocybe_Cubensis.png"
             ]
         },
         {
-            id: 10,
+            id: 11,
             name: "Coprinus comatus",
             commonName: "Cogumelo shaggy mane",
             region: ["sudeste", "sul"],
@@ -167,12 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Forma cilíndrica, escamas brancas, dissolve-se em tinta preta com a maturidade",
             country: "Europa e América do Norte",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/a/a9/Coprinus_comatus_2010_G1.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/0/00/Coprinus_comatus_Shaggy_Ink_Cap.jpg"
+                "images/Coprinus_comatus,_the_shaggy_ink_cap_mushroom.png"
             ]
         },
         {
-            id: 11,
+            id: 12,
             name: "Morchella esculenta",
             commonName: "Morela",
             region: ["sul", "sudeste"],
@@ -184,12 +279,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Chapéu em forma de colmeia, ocas por dentro, superfície enrugada e com alvéolos",
             country: "Europa, América do Norte e partes da Ásia",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/7/7a/Morchella_esculenta_-_Yellow_morel.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/3/32/Morchella_esculenta_LC0372.jpg"
+                "images/Morchella_conica.png"
             ]
         },
         {
-            id: 12,
+            id: 13,
             name: "Agaricus campestris",
             commonName: "Cogumelo do campo",
             region: ["centro-oeste", "sudeste", "sul"],
@@ -201,12 +295,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Chapéu branco que se torna marrom com a idade, lamelas rosadas que escurecem, anel no estipe",
             country: "Europa e América do Norte",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/2/20/Agaricus_campestris_LC0366.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/6/67/Agaricus_campestris_-_field_mushroom.jpg"
+                "images/Agaricus_campestris.png"
             ]
         },
         {
-            id: 13,
+            id: 14,
             name: "Lactarius deliciosus",
             commonName: "Saffron milk cap",
             region: ["sul"],
@@ -218,12 +311,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Chapéu alaranjado com zonas concêntricas, libera látex laranja quando danificado",
             country: "Espanha, Portugal e região do Mediterrâneo",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/0/02/Lactarius_deliciosus_-_Saffron_milk_cap.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/3/35/Lactarius_deliciosus_36764.jpg"
+                "images/Lactarius_deliciosus.png"
             ]
         },
         {
-            id: 14,
+            id: 15,
             name: "Ganoderma lucidum",
             commonName: "Reishi",
             region: ["sudeste", "sul"],
@@ -235,12 +327,11 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Formato de rim, superfície brilhante e envernizada, textura dura e lenhosa",
             country: "China, Japão e Coreia",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/f/f7/Ganoderma_lucidum_02.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/4/44/Reishi_Mushroom.jpg"
+                "images/Ganoderma_lucidum.png"
             ]
         },
         {
-            id: 15,
+            id: 16,
             name: "Auricularia auricula-judae",
             commonName: "Orelha-de-judas",
             region: ["sudeste"],
@@ -252,8 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             characteristics: "Formato de orelha, textura gelatinosa e elástica, superfície aveludada",
             country: "China e Sudeste Asiático",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/8/8f/Auricularia_auricula-judae_66959.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/3/3a/Auricularia_auricula-judae_-_Jelly_ear.jpg"
+                "images/Auricularia_auricula-judae.png"
             ]
         }
     ];
@@ -353,6 +443,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const edibleStatus = fungus.edible ? '<span class="tag">Comestível</span>' : '<span class="tag">Não comestível</span>';
         const poisonousStatus = fungus.poisonous ? '<span class="tag">Venenoso</span>' : '';
         
+        let recipesHtml = '';
+        if (fungus.edible && fungus.recipes) {
+            recipesHtml = `
+                <div class="recipes-section">
+                    <h3>Sugestões de Receitas</h3>
+                    <div class="recipes-container">
+                        ${fungus.recipes.map(recipe => `
+                            <div class="recipe-card">
+                                <h4>${recipe.name}</h4>
+                                <div class="recipe-details">
+                                    <div class="ingredients">
+                                        <h5>Ingredientes:</h5>
+                                        <ul>
+                                            ${recipe.ingredients.map(ingredient => `
+                                                <li>${ingredient}</li>
+                                            `).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="instructions">
+                                        <h5>Modo de Preparo:</h5>
+                                        <p>${recipe.instructions}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
         modalContentContainer.innerHTML = `
             <div class="modal-grid">
                 <div class="modal-image-container">
@@ -385,6 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </div>
+            ${recipesHtml}
         `;
         
         infoModal.style.display = 'flex';
