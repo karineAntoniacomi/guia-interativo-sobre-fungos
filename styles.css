@@ -441,20 +441,13 @@ footer {
 
 .post-author {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+    align-items: flex-start;
 }
 
 .post-metadata {
     color: #666;
     font-size: 0.9rem;
+    margin-top: 2px;
 }
 
 .post-content {
@@ -553,6 +546,29 @@ footer {
     border-radius: 8px;
     width: 90%;
     max-width: 600px;
+    position: relative;
+}
+
+.post-form .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.post-form .close-button:hover {
+    background-color: #e0e0e0;
+    color: var(--primary-color);
 }
 
 .form-group {

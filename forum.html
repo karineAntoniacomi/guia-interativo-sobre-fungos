@@ -83,11 +83,23 @@
         // Funções para manipulação do modal
         function openCreatePostModal() {
             document.getElementById('createPostModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Previne rolagem do body
         }
 
         function closeCreatePostModal() {
             document.getElementById('createPostModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaura rolagem do body
+            // Limpar o formulário ao fechar
+            document.getElementById('newPostForm').reset();
+            document.getElementById('imagePreview').innerHTML = '';
         }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('createPostModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeCreatePostModal();
+            }
+        });
 
         // Função para upload de imagens
         function triggerImageUpload() {
@@ -156,7 +168,6 @@
             postElement.innerHTML = `
                 <div class="post-header">
                     <div class="post-author">
-                        <img src="https://via.placeholder.com/40" alt="Avatar" class="author-avatar">
                         <div>
                             <strong>${post.author}</strong>
                             <div class="post-metadata">${post.date}</div>
