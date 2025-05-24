@@ -56,6 +56,12 @@ O projeto pode ser expandido com:
 - Identificação por imagem de novas espécies ou espécies já presentes no banco de dados.
 ---
 
+![Image](https://github.com/user-attachments/assets/ac6e3eee-9758-44f4-86b4-24fd37a9bf4d)
+
+![Image](https://github.com/user-attachments/assets/2ccfc2a1-8fdd-476c-816b-d37676d93cb9)
+
+![Image](https://github.com/user-attachments/assets/c12a4292-6f61-4829-8dc5-3e8e14c0f8d0)
+
 Desenvolvido como um guia educacional sobre o fascinante mundo dos fungos e cogumelos. 
 
 <img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa">
