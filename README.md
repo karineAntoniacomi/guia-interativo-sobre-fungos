@@ -64,4 +64,3 @@ O projeto pode ser expandido com:
 
 Desenvolvido como um guia educacional sobre o fascinante mundo dos fungos e cogumelos. 
 
-<img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa">
