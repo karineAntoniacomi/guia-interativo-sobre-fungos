@@ -11,7 +11,7 @@ Um site moderno e interativo que apresenta informações sobre diversas espécie
 - **Design Responsivo**: Adaptado para diferentes tamanhos de tela
 - **Informações Geográficas**: Dados sobre os países de origem de cada espécie
 
-## Banco de Dados
+## Banco de Dados (Static JSON dataset)
 
 O catálogo contém atualmente 16 espécies de fungos com informações detalhadas, incluindo:
 - Nome científico e nome comum
@@ -46,13 +46,16 @@ O catálogo contém atualmente 16 espécies de fungos com informações detalhad
 
 O projeto pode ser expandido com:
 
-- Integração de sistema de reconhecimento por imagem com modelos de aprendizado de máquina.
-- Adição de mais espécies ao banco de dados
-- Implementação de recursos de geolocalização para fungos da região do usuário
-- Funcionalidade de salvar espécies favoritas
-- Informações de identificação mais detalhadas para cada espécie
-- Filtro por país de origem
-- Identificação por imagem de novas espécies ou espécies já presentes no banco de dados
+- Desenvolvimento do backend e do Banco de Dados;
+- Integração de sistema de reconhecimento por imagem com modelos de aprendizado de máquina;
+- Adição de mais espécies ao banco de dados;
+- Implementação de recursos de geolocalização para fungos da região do usuário;
+- Funcionalidade de salvar espécies favoritas;
+- Informações de identificação mais detalhadas para cada espécie;
+- Filtro por país de origem;
+- Identificação por imagem de novas espécies ou espécies já presentes no banco de dados.
 ---
 
 Desenvolvido como um guia educacional sobre o fascinante mundo dos fungos e cogumelos. 
+
+<img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa">
